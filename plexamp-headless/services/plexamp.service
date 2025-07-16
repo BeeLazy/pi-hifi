@@ -1,0 +1,15 @@
+[Unit]
+Description=Plexamp Headless Player
+After=network-online.target
+Requires=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/plexamp
+ExecStart=/usr/bin/node /opt/plexamp/js/index.js
+Restart=on-failure
+User=plexamp
+Group=plexamp
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,11 @@
+[Unit]
+Description=Disable HDMI video on boot
+After=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStart=/opt/vc/bin/vcgencmd display_power 0
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,11 @@
+[Unit]
+Description=Disable HDMI audio by forcing analog audio output
+After=sound.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/amixer cset numid=3 1
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target
